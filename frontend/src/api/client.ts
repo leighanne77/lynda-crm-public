@@ -374,7 +374,7 @@ export const exports = {
       const blob = await response.blob();
       const filename = _filenameFromContentDisposition(
         response.headers.get("content-disposition"),
-        "lcc_contacts.csv",
+        "din_contacts.csv",
       );
       return { kind: "csv", blob, filename };
     }
@@ -402,7 +402,7 @@ export const exports = {
     const blob = await response.blob();
     const filename = _filenameFromContentDisposition(
       response.headers.get("content-disposition"),
-      "lcc_contacts.csv",
+      "din_contacts.csv",
     );
     return { kind: "csv", blob, filename };
   },

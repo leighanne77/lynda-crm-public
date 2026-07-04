@@ -100,7 +100,7 @@ def _safe_filename(title: str) -> str:
     Content-Disposition filename. Non-ASCII chars get dropped entirely
     so we don't need RFC-5987 encoding."""
     safe = re.sub(r"[^A-Za-z0-9_-]+", "_", title).strip("_")
-    return safe or "lcc_contacts"
+    return safe or "din_contacts"
 
 
 def _csv_response(contacts: list[dict], title: str) -> Response:

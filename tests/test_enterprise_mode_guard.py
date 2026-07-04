@@ -56,7 +56,7 @@ async def test_guard_allows_dummy_email_in_dummy_mode(
     assert mock_create.called
 
 
-async def test_guard_allows_lcc_team_email_in_dummy_mode(
+async def test_guard_allows_din_team_email_in_dummy_mode(
     mock_create: AsyncMock, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     monkeypatch.setattr(get_settings(), "enterprise_mode", False)

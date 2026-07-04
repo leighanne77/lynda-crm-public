@@ -393,7 +393,7 @@ LCC_TEAMMATES: list[dict[str, str]] = [
 ]
 
 
-def _get_or_create_lcc_users(db) -> dict[str, User]:
+def _get_or_create_din_users(db) -> dict[str, User]:
     """Return {email: User} for the three DIN teammates, creating any
     that don't already exist."""
     by_email: dict[str, User] = {}
@@ -424,7 +424,7 @@ def seed(reset: bool = False) -> None:
         sys.exit(1)
 
     with SessionLocal() as db:
-        users_by_email = _get_or_create_lcc_users(db)
+        users_by_email = _get_or_create_din_users(db)
         default_owner = users_by_email["alex@example.com"]
 
         if reset:

@@ -192,11 +192,13 @@ def _owner_name_lookup(rows: list[Contact], db: Session) -> dict[int, str | None
 
 # Owner-name → corner-badge initials. Explicit overrides cover names
 # where the "drop the last word as surname" heuristic gets the wrong
-# answer (e.g. "Jordan Blake" has no surname; the heuristic would yield
-# just "H" instead of the intended "HJ"). Keyed by full owner name as
-# stored on User.name.
+# answer — the heuristic drops the last word as a surname, so a plain
+# First-Last name yields a single initial; the overrides give the fuller
+# two-letter badge. Keyed by full owner name as stored on User.name.
 _OWNER_INITIALS_OVERRIDE: dict[str, str] = {
-    "Jordan Blake": "HJ",
+    "Alex Rivera": "AR",
+    "Sam Chen": "SC",
+    "Jordan Blake": "JB",
 }
 
 
@@ -307,7 +309,7 @@ def _initials_for(name: str | None) -> str | None:
       - explicit override wins (see _OWNER_INITIALS_OVERRIDE)
       - 1 word -> first letter
       - 2+ words -> initial of every word except the last (treated as
-        surname). 'Alex Rivera' -> 'LA'.
+        surname). 'Ada B. Lovelace' -> 'AB'.
     """
     if not name:
         return None

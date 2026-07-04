@@ -1122,15 +1122,15 @@ def test_create_result_marks_caller_as_self_owner(
     assert result["created"]["is_self_owned"] is True
 
 
-def test_initials_helper_matches_lcc_team() -> None:
-    """LA / E / HJ — the three DIN teammates. 'Jordan Blake' has no
-    surname so the heuristic alone would yield 'H'; the explicit
-    override gives 'HJ'."""
+def test_initials_helper_matches_din_team() -> None:
+    """AR / SC / JB — the three demo teammates. Each is a First-Last name,
+    so the heuristic alone would yield a single letter; the explicit
+    overrides give the fuller two-letter badge."""
     from app.services.tool_dispatch import _initials_for
 
-    assert _initials_for("Alex Rivera") == "LA"
-    assert _initials_for("Sam Chen") == "E"
-    assert _initials_for("Jordan Blake") == "HJ"
+    assert _initials_for("Alex Rivera") == "AR"
+    assert _initials_for("Sam Chen") == "SC"
+    assert _initials_for("Jordan Blake") == "JB"
     assert _initials_for(None) is None
     assert _initials_for("") is None
     # Single-word non-team name still gets a sensible single-letter badge.
@@ -1150,8 +1150,8 @@ def test_search_results_include_owner_initials(
     result = dispatch_tool_call("search_contacts", {}, alice, db)
     by_name = {r["name"]: r for r in result["results"]}
 
-    assert by_name["Alice Contact"]["owner_initials"] == "LA"
-    assert by_name["Bob Contact"]["owner_initials"] == "HJ"
+    assert by_name["Alice Contact"]["owner_initials"] == "AR"
+    assert by_name["Bob Contact"]["owner_initials"] == "JB"
 
 
 # ---------------------------------------------------------------------------

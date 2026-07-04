@@ -58,7 +58,7 @@ def _client() -> AsyncAnthropic:
 
 # Allowed in dummy mode: any *.fake TLD plus the DIN team domain.
 # Everything else is treated as "real" and blocked.
-_DUMMY_EMAIL_RE = re.compile(r"@[\w.-]+\.fake\b|@fundsdin\.com\b", re.IGNORECASE)
+_DUMMY_EMAIL_RE = re.compile(r"@[\w.-]+\.fake\b|@example\.com\b", re.IGNORECASE)
 _ANY_EMAIL_RE = re.compile(r"\b[\w.+-]+@[\w-]+(?:\.[\w-]+)+\b")
 
 
