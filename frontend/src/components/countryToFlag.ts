@@ -2,7 +2,7 @@
  * Canonical country-name → ISO 3166-1 alpha-2 code (lowercase) mapping.
  *
  * The contact.country field is free-text, but the chat system prompt
- * tells Lynda to use a fixed set of canonical names (e.g. "United
+ * tells Goddess to use a fixed set of canonical names (e.g. "United
  * States", "Saudi Arabia", "Canada"). This map mirrors that grammar.
  *
  * Unknown country names return null — the CountryFlag component
@@ -54,7 +54,7 @@ const CANONICAL_TO_ISO: Record<string, CountryCode> = {
 
 /**
  * Look up a flag code for a canonical country name. Case-insensitive on
- * the input — matches Lynda's grammar even if she returns "united
+ * the input — matches Goddess's grammar even if she returns "united
  * states" instead of "United States". Returns null if no flag is
  * catalogued for the country (CountryFlag renders nothing).
  */

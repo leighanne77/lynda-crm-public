@@ -10,7 +10,7 @@ from app.models.types import EncryptedString
 
 
 class User(Base):
-    """DIN team member with access to Lynda."""
+    """DIN team member with access to Goddess."""
 
     __tablename__ = "users"
 

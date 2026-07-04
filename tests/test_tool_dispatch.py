@@ -1080,7 +1080,7 @@ def test_create_google_task_failure_writes_no_audit_row(
 # ---------------------------------------------------------------------------
 # Phase 2 Slice 5 follow-up — owner_name / is_self_owned in result rows
 #
-# Lynda needs to know the owner BEFORE offering a Tasks reminder. Bug
+# Goddess needs to know the owner BEFORE offering a Tasks reminder. Bug
 # observed in prod: she offered "Talk to Marcus" (the contact) instead
 # of "Talk to <Owner>" because the result rows had no owner info.
 # ---------------------------------------------------------------------------

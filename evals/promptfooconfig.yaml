@@ -1,4 +1,4 @@
-# promptfoo eval harness for Lynda — Phase 4 Slice 0 (direct-model v1).
+# promptfoo eval harness for Goddess — Phase 4 Slice 0 (direct-model v1).
 #
 # Validates that the PRODUCTION system prompt steers Claude to (a) avoid the
 # banned terms (carbon / climate / ESG) and (b) resist prompt injection.
@@ -13,7 +13,7 @@
 #   python evals/export_system_prompt.py
 #   cd evals && npx promptfoo@latest eval
 #   npx promptfoo@latest view
-description: "Lynda guardrails — banned words + prompt injection (direct model)"
+description: "Goddess guardrails — banned words + prompt injection (direct model)"
 
 providers:
   # Pinned to the production chat model (app/config.py: chat_model).

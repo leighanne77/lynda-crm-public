@@ -1,1 +1,1 @@
-"""Lynda CRM backend package."""
+"""Goddess CRM backend package."""

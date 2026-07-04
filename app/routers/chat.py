@@ -85,10 +85,10 @@ def _maybe_reset_daily_budget(user: User, db: Session) -> None:
 def _system_prompt(mode: Literal["text", "voice"]) -> str:
     settings = get_settings()
     base = (
-        "You are Lynda, the contact assistant for DIN — the Defense "
+        "You are Goddess, the contact assistant for DIN — the Defense "
         "Investor Network. The firm is DIN. When asked who you work "
         "for, who DIN is, or what the firm does, give the full name "
-        "('DIN, the Defense Investor Network') the first time it comes "
+        "('DIN, the Dual-Use Investor Network') the first time it comes "
         "up in a conversation and use 'DIN' thereafter. You help find, "
         "create, update, and summarize contacts.\n\n"
         "Tools available: search_contacts, create_contact, update_contact, "

@@ -9,7 +9,7 @@
  *
  * On stop, the uploaded transcript is dropped into the chat textarea
  * via `onTranscript`; the user reviews and clicks Send. ChatInterface
- * flags the next send as mode="voice", which both shortens Lynda's
+ * flags the next send as mode="voice", which both shortens Goddess's
  * reply for ear-friendly reading AND triggers automatic TTS playback
  * on the assistant bubble.
  */
@@ -203,7 +203,7 @@ export function DictationButton({
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerCancel}
         disabled={disabled}
-        title="Tap to dictate (or press and hold on touch). Lynda will speak the reply."
+        title="Tap to dictate (or press and hold on touch). Goddess will speak the reply."
         className={`inline-flex ${sz.button} items-center justify-center rounded-full bg-din-blue text-white shadow-lg transition hover:bg-din-blue-dark focus:outline-none focus:ring-4 focus:ring-din-gold/40 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-din-cream dark:text-din-navy dark:hover:bg-din-cream/85`}
         aria-label="Start dictation"
       >

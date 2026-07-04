@@ -9,7 +9,7 @@ import { DinLogo } from "../components/DinLogo";
  * Shown once after first login. "Let's get to work" dismisses,
  * marks intro_seen on the server, and routes to home.
  *
- * Copy is the DIN-approved intro that introduces Lynda (the system),
+ * Copy is the DIN-approved intro that introduces Goddess (the system),
  * lays out the three funds, names the privacy enforcement model, and
  * lists the three-person team plus the system-role vs functional-role
  * distinction.
@@ -45,14 +45,14 @@ export default function Intro() {
           <h1 className="mt-10 text-center">Welcome to the DIN team portal.</h1>
 
           <div className="mt-8 space-y-4 text-base leading-relaxed">
-            <p>I&apos;m Lynda, the DIN Team System.</p>
+            <p>I&apos;m Goddess, the DIN Team System.</p>
 
             <p>
               This is where we work — and what we&apos;re building here matters.
             </p>
 
             <p>
-              DIN — the Defense Investor Network — exists to find and fund the
+              DIN — the Dual-Use Investor Network — exists to find and fund the
               best of American manufacturing and energy, right now, for what
               this country needs most. That means three things. We serve
               immediate defense needs. We rebuild America&apos;s capacity to
@@ -73,7 +73,7 @@ export default function Intro() {
             </p>
 
             <p>
-              Privacy in Lynda is enforced at the database layer, not the UI.
+              Privacy in Goddess is enforced at the database layer, not the UI.
               The UI surfaces these rules visually; it never substitutes for
               them. Every query is filtered by{" "}
               <code className="font-mono text-sm">current_user_id</code> before
@@ -103,7 +103,7 @@ export default function Intro() {
                   <td className="px-3 py-2">Alex Rivera</td>
                   <td className="px-3 py-2">admin</td>
                   <td className="px-3 py-2">
-                    AI Tools and Fund Partner, Lynda System Admin
+                    AI Tools and Fund Partner, Goddess System Admin
                   </td>
                 </tr>
                 <tr className="border-t border-din-navy/10 dark:border-din-cream/10">
@@ -129,7 +129,7 @@ export default function Intro() {
             System role gates technical access — admin can reach{" "}
             <code className="font-mono">/admin/audit</code> and (Phase 2+)
             approve cross-team change requests. Functional role describes what
-            the person does and surfaces in Lynda&apos;s conversational copy.
+            the person does and surfaces in Goddess&apos;s conversational copy.
           </p>
 
           <div className="mt-12 text-center">

@@ -1,4 +1,4 @@
-# Lynda eval harness (Phase 4 Slice 0)
+# Goddess eval harness (Phase 4 Slice 0)
 
 Behavioral evals that check two shipped guardrails actually hold against the
 live model — **banned-words avoidance** (carbon / climate / ESG) and

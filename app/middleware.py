@@ -1,4 +1,4 @@
-"""Custom ASGI middleware for Lynda CRM."""
+"""Custom ASGI middleware for Goddess CRM."""
 
 from __future__ import annotations
 

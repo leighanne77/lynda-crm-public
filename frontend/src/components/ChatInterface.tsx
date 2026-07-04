@@ -336,7 +336,7 @@ export function ChatInterface() {
             <div
               className="inline-flex items-center gap-2 rounded-lg bg-din-cream px-4 py-2 text-sm italic opacity-70 dark:bg-din-navy-soft"
               role="status"
-              aria-label="Lynda is thinking"
+              aria-label="Goddess is thinking"
             >
               <Loader2 size={14} className="animate-spin" />
               Thinking…

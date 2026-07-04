@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Lynda PWA app icon (full-bleed) — source for pwa-maskable-512.png and the
+  Goddess PWA app icon (full-bleed) — source for pwa-maskable-512.png and the
   Apple touch icon. Full-bleed cream field (no rounded corners / no transparency)
   so Android maskable cropping and iOS auto-rounding both look right. Letters
   sit inside the inner ~80% "safe zone" so nothing important gets cropped.

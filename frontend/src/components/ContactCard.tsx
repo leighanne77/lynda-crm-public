@@ -424,7 +424,7 @@ export function ContactCard({ contact, showExGov = false }: ContactCardProps) {
 
       {/* Heroine icon — renders directly below the airplane badge when
           contact_type === "Inspiration." Reserved for honorary/
-          inspiration entries in the roster (e.g. Lynda Carter as the
+          inspiration entries in the roster (e.g. Goddess Carter as the
           firm's inspiration namesake). Same 18px size as the fly badge
           so the pair reads as a stacked corner mark. */}
       {contact.contact_type === "Inspiration" ? (

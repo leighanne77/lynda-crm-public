@@ -1,7 +1,7 @@
 """Next-steps REST endpoints (Phase 2 Slice 6.10).
 
 The chat tools (`create_next_step`, `complete_next_step`) are the
-primary write surface — Lynda uses those for voice-driven adds. These
+primary write surface — Goddess uses those for voice-driven adds. These
 REST endpoints exist so the expanded-card UI can:
   - list a contact's pending + recently-completed next-steps
   - mark one done with a single click without round-tripping through

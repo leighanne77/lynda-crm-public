@@ -118,7 +118,7 @@ def test_create_next_step_records_warning_when_owner_has_no_google_token(
     db, user_factory: Callable[..., User]
 ) -> None:
     """Owner hasn't signed in with Google yet → in-app row still saved
-    but the tool result includes a warning string. Voice-first: Lynda
+    but the tool result includes a warning string. Voice-first: Goddess
     can read this back to the user."""
     user = user_factory(email="alice@test.fake")
     teammate = user_factory(email="bob@test.fake", name="Bob")

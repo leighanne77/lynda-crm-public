@@ -10,7 +10,7 @@ import { VitePWA } from "vite-plugin-pwa";
 //
 // VitePWA makes the app installable ("Add to Home Screen") on phones:
 // it emits a web manifest + a service worker that precaches the built
-// shell (JS/CSS/icons) so Lynda opens instantly and launches
+// shell (JS/CSS/icons) so Goddess opens instantly and launches
 // full-screen. IMPORTANT: the service worker never caches /api/* — all
 // contact data stays server-side behind the privacy filter and off the
 // device. navigateFallbackDenylist keeps API requests on the network;

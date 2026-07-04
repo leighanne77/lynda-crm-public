@@ -1,4 +1,4 @@
-# Build the Lynda backend image on Google Cloud Build.
+# Build the Goddess backend image on Google Cloud Build.
 #
 # Why: Cloud Build runs on native amd64 machines, so building here avoids the
 # slow QEMU emulation you hit cross-building amd64 from an Apple Silicon (arm64)
