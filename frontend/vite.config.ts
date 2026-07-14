@@ -10,7 +10,7 @@ import { VitePWA } from "vite-plugin-pwa";
 //
 // VitePWA makes the app installable ("Add to Home Screen") on phones:
 // it emits a web manifest + a service worker that precaches the built
-// shell (JS/CSS/icons) so Goddess opens instantly and launches
+// shell (JS/CSS/icons) so DESS opens instantly and launches
 // full-screen. IMPORTANT: the service worker never caches /api/* — all
 // contact data stays server-side behind the privacy filter and off the
 // device. navigateFallbackDenylist keeps API requests on the network;
@@ -22,8 +22,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       injectRegister: "auto",
       manifest: {
-        name: "Goddess CRM",
-        short_name: "Goddess",
+        name: "DESS CRM",
+        short_name: "DESS",
         description: "Voice-first team CRM + a deterministic warm-introduction engine.",
         id: "/",
         start_url: "/",

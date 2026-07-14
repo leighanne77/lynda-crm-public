@@ -1,6 +1,6 @@
-# Goddess CRM
+# DESS CRM
 
-[![CI](https://github.com/leighanne77/goddess-crm-public/actions/workflows/ci.yml/badge.svg)](https://github.com/leighanne77/goddess-crm-public/actions/workflows/ci.yml)
+[![CI](https://github.com/leighanne77/DESS/actions/workflows/ci.yml/badge.svg)](https://github.com/leighanne77/DESS/actions/workflows/ci.yml)
 
 Voice-first team CRM **+ a deterministic warm-introduction engine** for **DIN — the Dual-Use Investor Network.**
 
@@ -12,7 +12,7 @@ Voice-first team CRM **+ a deterministic warm-introduction engine** for **DIN �
 
 ## Overview
 
-Goddess is a voice-first team CRM for a dual-use investor network — a single-builder system
+DESS is a voice-first team CRM for a dual-use investor network — a single-builder system
 that ships real assurance, not a demo. It's designed for a small team operating on
 sensitive limited-partner (LP) contact data. The interesting part isn't that it's a CRM;
 it's that one person carried it from zero to production **with the governance layer that
@@ -31,31 +31,31 @@ What's actually in it:
 
 ## A day in the life
 
-It's 7:40am. **Alex** opens Goddess on her phone — it's installed to the home screen like a
-native app — and says: *"Who do I know at the Navy's shipbuilding office?"* Goddess reads back
+It's 7:40am. **Alex** opens DESS on her phone — it's installed to the home screen like a
+native app — and says: *"Who do I know at the Navy's shipbuilding office?"* DESS reads back
 three contacts, warmest first, and offers to remind her to call the top one.
 
-Mid-morning a partner forwards a name. *"Find me a warm intro to Admiral Barrett."* Goddess
+Mid-morning a partner forwards a name. *"Find me a warm intro to Admiral Barrett."* DESS
 walks the relationship graph — deterministically — and answers: *"Your warmest path is
 through Sam Chen, who's Must-Fly and worked with Barrett at NAVSEA. One hop."* It's not a
-black box: the score is `affinity × connection ÷ hops`, and Goddess can show its work. A
+black box: the score is `affinity × connection ÷ hops`, and DESS can show its work. A
 contact Alex isn't allowed to see never even appears in a path — the privacy filter runs at
 the query layer, not as an afterthought, and blocklisted or non-opted-in people are dropped
 before scoring.
 
 Over lunch she adds someone by voice: *"New contact, Maria Santos, maritime, must fly."*
-Goddess creates it, confirms in one sentence, and quietly writes an audit row. When she asks
-it to delete a duplicate, Goddess **stops and asks her to confirm first** — deletes are never
+DESS creates it, confirms in one sentence, and quietly writes an audit row. When she asks
+it to delete a duplicate, DESS **stops and asks her to confirm first** — deletes are never
 silent.
 
-By end of day none of it felt like software. She talked; Goddess did the legwork; and the
+By end of day none of it felt like software. She talked; DESS did the legwork; and the
 governance — consent gates, redaction, audit, cost budgets — ran underneath without getting
 in the way. That's the point: **the assurance is invisible until someone needs to prove it's
 there.**
 
 ## Guardrails & Governance
 
-Goddess is a Claude-powered assistant operating on sensitive LP/contact data, so the assurance
+DESS is a Claude-powered assistant operating on sensitive LP/contact data, so the assurance
 layer is a first-class part of the system. The controls below are grouped to map onto the
 frameworks it holds itself to — the **NIST AI Risk Management Framework** (Govern / Map /
 Measure / Manage) and **SR 11-7** (model development, validation, ongoing monitoring). Design

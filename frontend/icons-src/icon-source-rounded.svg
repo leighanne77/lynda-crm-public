@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Goddess PWA app icon (rounded, "any" purpose) — source for pwa-192/512.png.
+  DESS PWA app icon (rounded, "any" purpose) — source for pwa-192/512.png.
   Reuses the current favicon mark (DIN Red letters on a cream field) so the
   installed home-screen icon matches the browser tab. Swap the letters/colors
   here (and re-render) to move to a DIN mark.

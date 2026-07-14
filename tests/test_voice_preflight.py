@@ -2,7 +2,7 @@
 
 Proves a stale/removed voice or bad key produces a clear warning string,
 and that a healthy or disabled config stays quiet — so the silent-502
-failure mode (Goddess goes mute) becomes a loud log line instead.
+failure mode (DESS goes mute) becomes a loud log line instead.
 """
 
 from app.config import get_settings

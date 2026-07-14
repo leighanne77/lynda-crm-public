@@ -3,7 +3,7 @@
 A misconfigured TTS voice — a deleted ElevenLabs voice, a lapsed
 subscription that locked a custom voice, or a wrong/expired key —
 otherwise surfaces only as a silent HTTP 502 at `/api/voice/speak` time,
-which looks to the user like "Goddess just stopped talking." This logs a
+which looks to the user like "DESS just stopped talking." This logs a
 loud WARNING at boot so the cause is obvious in Cloud Logging instead.
 
 Best-effort and non-fatal: a network/transport failure logs nothing
@@ -65,7 +65,7 @@ def voice_config_warning(
         return (
             f"ELEVENLABS_VOICE_ID '{settings.elevenlabs_voice_id}' was NOT "
             "FOUND on the ElevenLabs account (HTTP 404). TTS /speak will "
-            "return 502 and Goddess will be silent. The voice was likely "
+            "return 502 and DESS will be silent. The voice was likely "
             "deleted or the subscription lapsed (custom voices are locked "
             "below a paid tier). Fix ELEVENLABS_VOICE_ID or restore it."
         )

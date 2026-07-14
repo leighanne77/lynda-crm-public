@@ -1,7 +1,7 @@
 """Export endpoints — Sheets (today) and CSV fallback (Slice 3).
 
 The endpoint reuses dispatch_tool_call("search_contacts", ...) so the
-privacy filter that gates Goddess also gates the export. There is no
+privacy filter that gates DESS also gates the export. There is no
 parallel "raw" path; every export goes through the same gatekeeper as
 the chat does.
 

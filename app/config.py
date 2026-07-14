@@ -146,7 +146,7 @@ class Settings(BaseSettings):
     #   stability        — lower = more emotional/varied delivery
     #   similarity_boost — higher = closer to the source recording
     #   style            — exaggerates the speaker's stylistic delivery
-    # Defaults aim for richer, less-thin output on Goddess's voice clone
+    # Defaults aim for richer, less-thin output on DESS's voice clone
     # (suspected contralto target). All three are 0.0–1.0.
     elevenlabs_stability: float = Field(default=0.35, ge=0.0, le=1.0)
     elevenlabs_similarity_boost: float = Field(default=0.85, ge=0.0, le=1.0)

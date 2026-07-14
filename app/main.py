@@ -47,7 +47,7 @@ def create_app() -> FastAPI:
     settings = get_settings()
 
     app = FastAPI(
-        title="Goddess CRM",
+        title="DESS CRM",
         description="Voice-enabled team CRM for DIN",
         version="0.1.0",
     )

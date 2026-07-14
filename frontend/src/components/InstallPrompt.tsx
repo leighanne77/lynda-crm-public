@@ -17,7 +17,7 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-const DISMISS_KEY = "goddess-install-dismissed";
+const DISMISS_KEY = "dess-install-dismissed";
 
 function isStandalone(): boolean {
   return (
@@ -90,11 +90,11 @@ export default function InstallPrompt() {
         <div className="min-w-0 flex-1 text-sm leading-snug">
           {mode === "android" ? (
             <span>
-              Install <strong>Goddess</strong> on your phone for one-tap access.
+              Install <strong>DESS</strong> on your phone for one-tap access.
             </span>
           ) : (
             <span>
-              Install <strong>Goddess</strong>: tap <strong>Share</strong>, then{" "}
+              Install <strong>DESS</strong>: tap <strong>Share</strong>, then{" "}
               <strong>Add to Home Screen</strong>.
             </span>
           )}

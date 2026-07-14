@@ -1,5 +1,5 @@
 /**
- * TTS playback hook for Goddess's assistant messages.
+ * TTS playback hook for DESS's assistant messages.
  *
  * State machine: idle → loading → playing → idle (or error).
  *

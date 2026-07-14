@@ -1,7 +1,7 @@
 [project]
 name = "lynda-crm"
 version = "0.1.0"
-description = "Goddess — voice-enabled team CRM for DIN"
+description = "DESS — voice-enabled team CRM for DIN"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.110.0",

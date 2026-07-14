@@ -135,7 +135,7 @@ export function ContactCardExpanded({
             </p>
           ) : steps.filter((s) => !s.done).length === 0 ? (
             <p className="text-sm italic text-din-navy/50">
-              No pending next steps. Ask Goddess: "add a next step for{" "}
+              No pending next steps. Ask DESS: "add a next step for{" "}
               {contact.name} to ... ".
             </p>
           ) : (

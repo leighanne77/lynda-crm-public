@@ -126,10 +126,10 @@ def _format_contact(
     only exposes what the user already has access to.
 
     owner_name + is_self_owned were added in Phase 2 Slice 5 follow-up:
-    Goddess needs to know the owner BEFORE offering a "Talk to <Owner>"
+    DESS needs to know the owner BEFORE offering a "Talk to <Owner>"
     reminder, and needs to detect self-owned contacts so she doesn't
     offer to remind the user to talk to themselves. The user.id itself
-    is deliberately NOT exposed — owner_name is what Goddess speaks; the
+    is deliberately NOT exposed — owner_name is what DESS speaks; the
     boolean is what gates the offer.
     """
     return {
@@ -141,7 +141,7 @@ def _format_contact(
         "cell_phone": c.cell_phone,
         "office_phone": c.office_phone,
         # Slice 6.8 — surface notes on fully-visible rows so the
-        # expanded card view + Goddess's chat readback can use them.
+        # expanded card view + DESS's chat readback can use them.
         # Redacted rows never get notes (see _redacted_view) — notes
         # is on the never-reveal PII list.
         "notes": c.notes,
@@ -215,7 +215,7 @@ def _redacted_view(c: Contact, *, owner_name: str | None) -> dict[str, Any]:
     """Build the partial-reveal shape for a private contact owned by a
     teammate. PII columns are forced to null; only fields in the
     intersection of the row's reveal_fields and ALLOWED_REVEAL_FIELDS
-    are populated. The owner's name + initials are included so Goddess
+    are populated. The owner's name + initials are included so DESS
     can say 'ask <Owner>'.
     """
     reveal = _effective_reveal_set(c)
@@ -881,7 +881,7 @@ def _handle_create_google_task(
       - contact must be visible to the caller (privacy filter applies);
       - caller must NOT own the contact (no point reminding yourself
         to talk to your own contact);
-      - owner name is read from the owner User row — Goddess's prompt
+      - owner name is read from the owner User row — DESS's prompt
         never gets to pick it.
     """
     stmt = visible_contacts_query(user).where(Contact.id == params.contact_id)
