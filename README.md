@@ -10,6 +10,54 @@ Voice-first team CRM **+ a deterministic warm-introduction engine** for **DIN �
 > (`scripts/seed_dummy_data.py`) lets you clone and run the whole thing end-to-end. It's
 > here to show the engineering — not to expose a live deployment or any real data.
 
+## 🛠️ Stack
+
+> **No LLM in the trust path.** The model translates the request and narrates the answer; deterministic Python decides who is reachable and how warm a path is — and the privacy filter drops anyone the user is not allowed to see *before* scoring. The assistant can suggest; it cannot decide or leak.
+
+| Layer | Technology |
+| --- | --- |
+| **Assistant (LLM)** | Anthropic **Claude** via tool-use — natural language → Pydantic-schema-validated tool calls through a bounded dispatch loop (iteration cap, history truncation); untrusted text sandboxed in `<USER_DATA>` delimiters — `app/services/tool_dispatch.py`, `app/routers/chat.py` |
+| **Warm-intro engine** | Pure-Python, **deterministic** path-scoring over an in-memory relationship graph — `affinity × connection ÷ hops`, hard safety gates (blocklist + outreach-consent) — `app/services/intro_pathfinder.py`, `intro_paths.py` |
+| **Voice** | Vendor-neutral, pluggable **speech-to-text** (Google Cloud Speech / Chirp) + **text-to-speech** (ElevenLabs), voice-activity detection, async UX for high-latency calls — `app/services/voice/` |
+| **Data & privacy** | **PostgreSQL** via SQLAlchemy 2.0 + Alembic (psycopg 3); three-tier contact visibility (visible / redacted / hidden) + reveal-fields whitelist, enforced at the **query layer** — `app/services/privacy.py` |
+| **Assurance / governance** | Controls mapped to **NIST AI RMF** + **SR 11-7**; Fernet-encrypted OAuth tokens, hashed-payload audit with field-level diffs + CSV export, per-user token/voice cost budgets, structured JSON logs — `app/services/audit.py`, `token_crypto.py`, `admin_cost.py` |
+| **Access & identity** | **Google OAuth** (domain allowlist) → short-lived signed **JWT** sessions (HttpOnly / SameSite) — `app/routers/auth.py`, `app/security.py` |
+| **API** | **FastAPI** + uvicorn; per-route auth, per-user rate limiting, structured upstream-error mapping (502 / 503) |
+| **Frontend** | **React 18 + TypeScript + Vite + Tailwind** SPA; installable **PWA** (vite-plugin-pwa); react-router, react-markdown, lucide icons — `frontend/` |
+| **Evals** | **promptfoo** — banned-term avoidance + prompt-injection resistance, deterministic asserts + an LLM rubric — `evals/` |
+| **Testing / quality** | **pytest** (+ asyncio), **Playwright** e2e, **mypy --strict**, black · isort · flake8, pre-commit |
+| **Deploy (GCP)** | Multi-stage **Docker** (node:20 build → Python runtime) → **Cloud Run** via **Cloud Build** + Artifact Registry; **Cloud SQL** Postgres; migrations run in-container at startup — `Dockerfile`, `cloudbuild.yaml` |
+
+The relationship graph is walked **in memory at team scale** — a graph database is a documented *"adopt-when-it-earns-it"* decision, not a default.
+
+## 🗺️ System at a glance
+
+```mermaid
+flowchart TD
+    U["Team member — speaks or types"] --> PWA["React + Vite PWA · installable"]
+    PWA --> API["FastAPI · Google OAuth + JWT · rate limiting"]
+    API --> LLM["Claude assistant · tool-use dispatch loop · USER_DATA-sandboxed input"]
+
+    API --> STT["Speech-to-text · Google Chirp"]
+    STT --> LLM
+    LLM --> TTS["Text-to-speech · ElevenLabs"]
+    TTS --> PWA
+
+    LLM --> CRUD["Contacts CRUD · owner-only · confirm-before-delete"]
+    LLM --> INTRO["Warm-intro engine · affinity × connection ÷ hops · NO LLM in the trust path"]
+    LLM --> EXPORT["Exports · Google Sheets / Tasks"]
+
+    CRUD --> PRIV["Privacy filter · 3-tier visibility · at the query layer"]
+    INTRO --> PRIV
+    EXPORT --> PRIV
+    PRIV --> DB[("PostgreSQL · SQLAlchemy + Alembic")]
+
+    LLM -. audited + cost-metered .-> GOV["Assurance · hashed audit · cost budgets · NIST AI RMF / SR 11-7"]
+    DB -. deploy .-> CR["Cloud Run · Cloud SQL · Cloud Build"]
+```
+
+Everything runs **offline against a fictional demo dataset** — clone, seed, and drive the whole flow yourself (see **[Run it locally](#run-it-locally-clone--run)** below).
+
 ## Overview
 
 DESS is a voice-first team CRM for a dual-use investor network — a single-builder system
@@ -152,10 +200,4 @@ make test         # backend test suite
 make sync-types   # regenerate frontend TS types from the Pydantic models
 ```
 
-## Tech stack
-
-FastAPI + SQLAlchemy + Alembic over PostgreSQL; a React + TypeScript + Vite + Tailwind
-single-page app; Claude for the assistant; pluggable STT/TTS for voice; packaged as a
-multi-stage Docker image for Cloud Run. The warm-intro engine is pure Python (deterministic,
-unit-tested) with the graph walked in memory at team scale — a graph database is a documented
-"adopt-when-it-earns-it" decision, not a default.
+_Full stack + architecture are at the top of this README (**🛠️ Stack** and **🗺️ System at a glance**)._
